@@ -13,4 +13,4 @@ channels:
         summary: Emplyee Message Summary
         description: An event describing the new employee created.
         payload:
-          $ref: './avro/Employee.avsc/#Employee'
+          $ref: 'https://raw.githubusercontent.com/skshukla/tmp-async-api-doc/master/employee/avro/Employee.avsc'
