@@ -1,0 +1,62 @@
+asyncapi: 2.0.0
+info:
+  title: Order Service
+  version: 1.0.0
+  description: Order Service
+channels:
+  orderCreateRequest:
+    subscribe:
+      message:
+        schemaFormat: application/vnd.apache.avro;version=1.9.0
+        contentType: application/json
+        name: Order Create Request
+        title: Order Create Request
+        summary: Order Create Request
+        payload:
+          $ref: 'http://localhost:8181/ui/artifacts/orderCreate/versions/1'
+  orderUpdateRequest:
+    subscribe:
+      message:
+        schemaFormat: application/vnd.apache.avro;version=1.9.0
+        contentType: application/json
+        name: Order Update Request
+        title: Order Update Request
+        summary: Order Update Request
+        examples:
+          -
+            name: orderUpdateExamle
+            payload:
+              id: 99
+              quantity: 53
+        payload:
+          $ref: '#/components/schemas/OrderUpdateDataType'
+  payment:
+    description: payment
+    publish:
+      message:
+        schemaFormat: application/vnd.apache.avro;version=1.9.0
+        contentType: application/json
+        name: Payment For the Order
+        title: Payment For the Order
+        summary: Payment For the Order
+        payload:
+          $ref: 'http://localhost:8181/ui/artifacts/payment/versions/2'
+components:
+  schemas:
+    OrderUpdateDataType:
+      title: Root Type for OrderUpdateDataType
+      description: ''
+      required:
+        - id
+        - quantity
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        quantity:
+          format: int32
+          type: integer
+      example:
+        id: 1
+        quantity: 5
