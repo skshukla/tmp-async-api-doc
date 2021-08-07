@@ -19,9 +19,9 @@ channels:
       message:
         schemaFormat: application/vnd.apache.avro;version=1.9.0
         contentType: application/json
-        name: Order Create Request
-        title: Order Create Request
-        summary: Order Create Request
+        name: Order Update Request
+        title: Order Update Request
+        summary: Order Update Request
         payload:
           $ref: 'http://localhost:8181/ui/artifacts/orderUpdate/versions/1'
   payment:
