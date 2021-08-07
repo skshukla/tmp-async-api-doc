@@ -34,4 +34,4 @@ channels:
         title: Payment For the Order
         summary: Payment For the Order
         payload:
-          $ref: 'http://localhost:8181/ui/artifacts/payment/versions/1'
+          $ref: 'http://localhost:8181/ui/artifacts/payment/versions/2'
