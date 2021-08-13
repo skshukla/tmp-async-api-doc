@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: Order Service
 channels:
-  orderCreateRequest:
+  orderCreateTopic_v2:
     subscribe:
       message:
         schemaFormat: application/vnd.apache.avro;version=1.9.0
@@ -13,8 +13,8 @@ channels:
         title: Order Create Request
         summary: Order Create Request
         payload:
-          $ref: 'http://localhost:8181/ui/artifacts/orderCreate/versions/1'
-  orderUpdateRequest:
+          $ref: 'http://192.168.10.116:8181/ui/artifacts/orderCreate/versions/1'
+  orderUpdateTopic:
     subscribe:
       message:
         schemaFormat: application/vnd.apache.avro;version=1.9.0
@@ -23,8 +23,8 @@ channels:
         title: Order Update Request
         summary: Order Update Request
         payload:
-          $ref: 'http://localhost:8181/ui/artifacts/orderUpdate/versions/1'
-  payment:
+          $ref: 'http://192.168.10.116:8181/ui/artifacts/orderUpdate/versions/1'
+  paymentTopic_v4:
     description: payment
     publish:
       message:
@@ -34,4 +34,4 @@ channels:
         title: Payment For the Order
         summary: Payment For the Order
         payload:
-          $ref: 'http://localhost:8181/ui/artifacts/payment/versions/2'
+          $ref: 'http://192.168.10.116:8181/ui/artifacts/payment/versions/2'
